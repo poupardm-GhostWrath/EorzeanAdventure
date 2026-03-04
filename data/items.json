@@ -1,0 +1,53 @@
+{
+    "sword": {
+        "poor": {
+            "Wooden Sword": 5
+        },
+        "common": {
+            "Iron Sword": 10
+        },
+        "uncommon": {
+            "Steel Sword": 20
+        },
+        "rare": {
+            "Steel Sword of Chaos": 35
+        },
+        "Unique": {
+            "Excalibur": 100
+        }
+    },
+    "bow": {
+        "poor": {
+            "Wooden Bow": 3
+        },
+        "common": {
+            "Iron Bow": 5
+        },
+        "uncommon": {
+            "Steel Bow": 15
+        },
+        "rare": {
+            "Steel Bow of Chaos": 30
+        },
+        "unique": {
+            "Cupid's Bow": 95
+        }
+    },
+    "staff": {
+        "poor": {
+            "Wooden Staff": 1
+        },
+        "common": {
+            "Iron Staff": 5
+        },
+        "uncommon": {
+            "Steel Staff": 10
+        },
+        "rare": {
+            "Steel Staff of Chaos": 25
+        },
+        "unique": {
+            "Merlin's Staff": 90
+        }
+    }
+}

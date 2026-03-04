@@ -22,5 +22,4 @@ def create_world() -> World:
                                         data[location]["crystal"],
                                         data[location]["enemies"])
         tmp_world.add_location(tmp_location)
-    
     return tmp_world

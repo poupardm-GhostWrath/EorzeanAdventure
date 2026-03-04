@@ -6,7 +6,7 @@
             "west": "Market", 
             "east": "The Flames", 
             "south": "Adventure's Guild"},
-        "items": ["coins"],
+        "items": ["staff"],
         "crystal": true,
         "enemies": []
     },
@@ -18,7 +18,7 @@
             "east": "The Serpent",
             "south": "Adventure's Guild" 
         },
-        "items": ["pixie dust"],
+        "items": ["bow"],
         "crystal": true,
         "enemies": []
     },
@@ -30,7 +30,7 @@
             "south": "Adventure's Guild",
             "east": "La Noscea"
         },
-        "items": ["fish"],
+        "items": ["axe"],
         "crystal": true,
         "enemies": []
     },
