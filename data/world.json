@@ -1,0 +1,96 @@
+{
+    "Ul'dah": {
+        "desc": "You are in the bustling City of Ul'dah.",
+        "exits": {
+            "north": "Thanalan", 
+            "west": "Market", 
+            "east": "The Flames", 
+            "south": "Adventure's Guild"},
+        "items": ["coins"],
+        "crystal": true,
+        "enemies": []
+    },
+    "Gridania": {
+        "desc": "The Town of Gridania",
+        "exits": {
+            "north": "Market",
+            "west": "The Black Shroud",
+            "east": "The Serpent",
+            "south": "Adventure's Guild" 
+        },
+        "items": ["pixie dust"],
+        "crystal": true,
+        "enemies": []
+    },
+    "Limsa Lominsa": {
+        "desc": "The Port City of Limsa Lominsa",
+        "exits": {
+            "north": "The Maelstrom",
+            "west": "Market",
+            "south": "Adventure's Guild",
+            "east": "La Noscea"
+        },
+        "items": ["fish"],
+        "crystal": true,
+        "enemies": []
+    },
+    "Thanalan": {
+        "desc": "You are in the desert of Thanalan.",
+        "exits": {
+            "west": "La Noscea",
+            "east": "The Black Shroud",
+            "north": "Mor Dhona",
+            "south": "Ul'dah"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    },
+    "La Noscea": {
+        "desc": "You are in the desert of Thanalan.",
+        "exits": {
+            "west": "Limsa Lominsa",
+            "south": "Thanalan",
+            "east": "Mor Dhona",
+            "north": "Coerthas"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    },
+    "The Black Shroud": {
+        "desc": "You are in the desert of Thanalan.",
+        "exits": {
+            "west": "Mor Dhona",
+            "east": "Gridania",
+            "north": "Coerthas",
+            "south": "Thanalan"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    },
+    "Coerthas": {
+        "desc": "You are in the desert of Thanalan.",
+        "exits": {
+            "west": "La Noscea",
+            "east": "The Black Shroud",
+            "south": "Mor Dhona"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    },
+    "Mor Dhona": {
+        "desc": "You are in the desert of Thanalan.",
+        "exits": {
+            "west": "La Noscea",
+            "east": "The Black Shroud",
+            "north": "Coerthas",
+            "south": "Thanalan"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    }
+}

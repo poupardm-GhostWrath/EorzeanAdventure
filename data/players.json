@@ -1,0 +1,16 @@
+[
+    {
+        "1": {
+            "name": "Ghost",
+            "race": "Lalafell",
+            "level": "1",
+            "current_xp": "0",
+            "health": "100",
+            "mana": "100",
+            "inventory": [
+                "stick"
+            ],
+            "current_location": "Ul'dah"
+        }
+    }
+]

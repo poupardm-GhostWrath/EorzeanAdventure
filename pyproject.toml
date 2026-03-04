@@ -1,0 +1,7 @@
+[project]
+name = "eorzeanadventure"
+version = "0.1.0"
+description = "Eorzean Text-Based Adventure Game"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
