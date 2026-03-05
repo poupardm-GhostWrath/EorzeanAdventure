@@ -1,7 +1,7 @@
 # Road Map
 1. ~~Build player~~
 2. ~~Build enemy~~
-3. Build item
+3. ~~Build item~~
 4. Build location
 5. Build world
 6. Populate world
