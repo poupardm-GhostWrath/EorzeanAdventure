@@ -4,6 +4,8 @@ class Item_Type(Enum):
     SWORD = "sword"
     BOW = "bow"
     STAFF = "staff"
+    POTION = "potion"
+    COIN = "coin"
 
 class Item_Rarity(Enum):
     POOR = "poor"
@@ -18,6 +20,7 @@ class Item():
         self._type: Item_Type = type
         self._rarity: Item_Rarity = rarity
         self._damage: int = damage
+        self._quantity: int = 1
 
     def __repr__(self):
         return f"Name: {self._name} Type: {self._type.value} Rarity: {self._rarity.value} Damage: {self._damage}"
@@ -31,5 +34,15 @@ class Item():
     def get_rarity(self) -> Item_Rarity:
         return self._rarity
 
-    def get_damage(self):
+    def get_damage(self) -> int:
         return self._damage
+    
+    def get_quantity(self) -> int:
+        return self._quantity
+
+    def inc_quantity(self) -> None:
+        self._quantity += 1
+
+    def dec_quantity(self) -> int:
+        self._quantity -= 1
+        return self._quantity

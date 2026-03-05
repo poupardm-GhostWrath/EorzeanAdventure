@@ -13,7 +13,9 @@ def main():
     player: Player = Player("Ghost", PlayerRace.LALAFELL, "Ul'dah")
     print(player)
     print(f"=== Welcome to Eorzea {player.get_name()}! ===")
-
+    player.show_inventory()
+    player.add_to_inventory(Item("Wooden Sword", Item_Type.SWORD, Item_Rarity.POOR, 5))
+    player.show_inventory()
 
 
     

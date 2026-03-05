@@ -1,6 +1,6 @@
 # Road Map
-1. Build player
-2. Build enemy
+1. ~~Build player~~
+2. ~~Build enemy~~
 3. Build item
 4. Build location
 5. Build world
@@ -20,4 +20,5 @@
     - Docker?
     - Direct to website?
 11. Make users create login to save player info
-12. Who knows
+12. Quests
+13. Who knows

@@ -20,6 +20,12 @@ class EnemyRace(Enum):
     MACHINE = "Machine"
     PLANT = "Plant"
 
+class EnemyRank(Enum):
+    GRUNT = "Grunt"
+    VETERAN = "Veteran"
+    ELITE = "Elite"
+    BOSS = "Boss"
+
 class Character:
     def __init__(self, name: str):
         self._name: str = name
@@ -34,6 +40,12 @@ class Character:
     def take_damage(self, damage: int) -> int:
         self._health -= damage
         return self._health
+
+    def __repr__(self):
+        raise NotImplementedError("Function not implemented.")
+
+    def get_race(self):
+        raise NotImplementedError("Function not implemented.")
 
 class Player(Character):
     def __init__(self, name: str, race: PlayerRace, starting_town: str):
@@ -119,3 +131,29 @@ class Player(Character):
             self._weapon = None
         self._weapon = weapon
         self.remove_from_inventory(weapon)
+
+    def show_inventory(self) -> None:
+        if len(self._inventory) > 0:
+            inv: list[Items] = self.get_inventory()
+            items: list[str] = []
+            for item in inv:
+                items.append(item.get_name())
+            print("You carry:", ", ".join(items))
+        else:
+            print("Your inventory is empty.")
+
+
+class Enemy(Character):
+    def __init__(self, name: str, race: EnemyRace, rank: EnemyRank):
+        super().__init__(name)
+        self._race: EnemyRace = race
+        self._rank: EnemyRank = rank
+
+    def __repr__(self):
+        return f"Name: {self._name} Race: {self._race} Rank: {self._rank}"
+
+    def get_race(self):
+        return self._race
+
+    def get_rank(self):
+        return self._rank
