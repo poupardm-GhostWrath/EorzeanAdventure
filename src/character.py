@@ -1,6 +1,6 @@
 from enum import Enum
 from world import World, Location
-from item import Item, Item_Type, Item_Rarity
+from item import Item, Item_Type, Item_Rarity, Weapon, Consumable
 
 class PlayerRace(Enum):
     LALAFELL = "Lalafell"
@@ -53,8 +53,9 @@ class Player(Character):
         self._race: PlayerRace = race
         self._level: int = 1
         self._exp: int = 0
+        self._maxHealth: int = 100
         self._mana: int = 100
-        self._weapon: Item = None
+        self._weapon: Weapon = None
         self._location: str = starting_town
         self._inventory: list[Item] = []
 
@@ -69,6 +70,9 @@ class Player(Character):
     
     def get_exp(self) -> int:
         return self._exp
+
+    def get_maxHealth(self) -> int:
+        return self._maxHealth
     
     def get_mana(self) -> int:
         return self._mana
@@ -93,7 +97,8 @@ class Player(Character):
         if self._exp < 1000:
             return 0
         self._exp -= 1000
-        self._health += 50 # Gain 50 health points
+        self._maxHealth += 50 # Gain 50 health points
+        self._health = self._maxHealth # Recover full HP
         self._mana += 50 # Gain 50 mana points
         return 1 + self.level_up()
         
@@ -114,10 +119,19 @@ class Player(Character):
         print("Exits:", "\n-","\n- ".join(curr_location.get_exits().keys()))
 
     def add_to_inventory(self, item: Item) -> None:
+        for i in self._inventory:
+            if i.get_name() == item.get_name():
+                i.inc_quantity()
+                return
         self._inventory.append(item)
 
-    def remove_from_inventory(self, item: Item) -> None:
-        self._inventory.remove(item)
+    def remove_from_inventory(self, item_name: str) -> None:
+        for i in self._inventory:
+            if i.get_name() == item_name:
+                new_quantity = i.dec_quantity()
+                if new_quantity <= 0:
+                    self._inventory.remove(i)
+                return
 
     def unequip_weapon(self) -> None:
         if self._weapon is None:
@@ -125,22 +139,35 @@ class Player(Character):
         self.add_to_inventory(self._weapon)
         self._weapon = None
 
-    def equip_weapon(self, weapon: Item) -> None:
-        if self._weapon is not None:
-            self.add_to_inventory(self._weapon)
-            self._weapon = None
-        self._weapon = weapon
-        self.remove_from_inventory(weapon)
+    def equip_weapon(self, weapon: str) -> None:
+        # Check if weapon already equipped
+        self.unequip_weapon()
+
+        # Loop through inventory to find the weapon
+        for i in self._inventory:
+            if i.get_name() == weapon:
+                self._weapon = i
+                self.remove_from_inventory(weapon)
+                return
 
     def show_inventory(self) -> None:
         if len(self._inventory) > 0:
             inv: list[Items] = self.get_inventory()
             items: list[str] = []
             for item in inv:
-                items.append(item.get_name())
+                items.append(f"{item.get_quantity()} {item.get_name()}")
             print("You carry:", ", ".join(items))
         else:
             print("Your inventory is empty.")
+
+    def use_item(self, item_name: str) -> None:
+        for i in self._inventory:
+            if i.get_name() == item_name:
+                self._health += i.get_recover_amount()
+                if self._health > self._maxHealth:
+                    self._health = self._maxHealth
+                self.remove_from_inventory(item_name)
+                return
 
 
 class Enemy(Character):
