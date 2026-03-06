@@ -169,6 +169,13 @@ class Player(Character):
                 self.remove_from_inventory(item_name)
                 return
 
+    def teleport(self, world: World, location_name: str) -> bool:
+        if location_name in world.get_locations():
+            self._location: Location = world.get_locations()[location_name]
+            return True
+        else:
+            return False
+
 
 class Enemy(Character):
     def __init__(self, name: str, race: EnemyRace, rank: EnemyRank):

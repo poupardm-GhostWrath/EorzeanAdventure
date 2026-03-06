@@ -1,6 +1,6 @@
 {
     "Ul'dah": {
-        "desc": "You are in the bustling City of Ul'dah.",
+        "desc": "You are in the bustling City of Ul'dah. You see an Aetheryte Crystal in front of you.\nIn the distance, you see someone getting mugged while another just dances there. You try to ignore it...",
         "exits": {
             "north": "Thanalan", 
             "west": "Market", 
@@ -11,7 +11,7 @@
         "enemies": []
     },
     "Gridania": {
-        "desc": "The Town of Gridania",
+        "desc": "You are in the Forest Town of Gridania. You see an Aetheryte Crystal in front of you.\nIn the distance, you see some Miqo'te band performing. You don't recognize any of these strange songs...",
         "exits": {
             "north": "Market",
             "west": "The Black Shroud",
@@ -23,7 +23,7 @@
         "enemies": []
     },
     "Limsa Lominsa": {
-        "desc": "The Port City of Limsa Lominsa",
+        "desc": "You are in the Port City of Limsa Lominsa. You see an Aetheryte Crystal in front of you.\nIn the distance, you see scantily clad groups of people gather together. Wonder what they are talking about...",
         "exits": {
             "north": "The Maelstrom",
             "west": "Market",
@@ -35,7 +35,7 @@
         "enemies": []
     },
     "Thanalan": {
-        "desc": "You are in the desert of Thanalan.",
+        "desc": "You are in the desert of Thanalan. You feel like your skin is melting from the heat. How could anyone live here...",
         "exits": {
             "west": "La Noscea",
             "east": "The Black Shroud",
@@ -47,7 +47,7 @@
         "enemies": []
     },
     "La Noscea": {
-        "desc": "You are in the desert of Thanalan.",
+        "desc": "You are in the plains of La Noscea. You can feel the nice breeze from the ocean enveloping you. You somehow feel very relaxed...too relaxed...",
         "exits": {
             "west": "Limsa Lominsa",
             "south": "Thanalan",
@@ -59,7 +59,7 @@
         "enemies": []
     },
     "The Black Shroud": {
-        "desc": "You are in the desert of Thanalan.",
+        "desc": "You are in the dense forest of The Black Shroud. You feel so small compared to the towering trees that surrounds you. You feel like someone is watching you...",
         "exits": {
             "west": "Mor Dhona",
             "east": "Gridania",
@@ -71,7 +71,7 @@
         "enemies": []
     },
     "Coerthas": {
-        "desc": "You are in the desert of Thanalan.",
+        "desc": "You are in the snowy mountains of Coerthas. You feel so cold surrounded by all this snow. You feel your extremities slowly developing frostbites...",
         "exits": {
             "west": "La Noscea",
             "east": "The Black Shroud",
@@ -82,7 +82,7 @@
         "enemies": []
     },
     "Mor Dhona": {
-        "desc": "You are in the desert of Thanalan.",
+        "desc": "You are in the barren wasteland of Mor Dhona. You feel uneasy surrounded by the vestiges of a deadly battle. You feel like a curse is surrounds this place...",
         "exits": {
             "west": "La Noscea",
             "east": "The Black Shroud",

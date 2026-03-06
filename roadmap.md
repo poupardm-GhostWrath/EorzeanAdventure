@@ -2,14 +2,14 @@
 1. ~~Build player~~
 2. ~~Build enemy~~
 3. ~~Build item~~
-4. Build location
-5. Build world
+4. ~~Build location~~
+5. ~~Build world~~
 6. Populate world
-    - Locations
+    - ~~Locations~~
     - Items
     - Enemies
 7. Add player movements
-    - Move
+    - ~~Move~~
     - Pick up items
     - Drop items
 8. Add combat
