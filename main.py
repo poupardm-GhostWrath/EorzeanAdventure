@@ -3,74 +3,79 @@ import os
 module_dir = os.path.normpath('src')
 sys.path.append(module_dir)
 
-from character import Player, PlayerRace
+from character import Player, PlayerRace, create_player
 from world import World, Location
 from item import Item_Rarity, Item_Type, Consumable, Weapon
 
+def parse_command(world: World, player: Player, cmd: str) -> None:
+    parts = cmd.lower().strip().split()
+    if not parts:
+        return
+
+    verb = parts[0]
+
+    if verb in ("exit", "quit"):
+        print("Thank you for playing. See you next time.")
+        sys.exit()
+    elif verb == "help":
+        print("=== HELP MENU ===")
+        help_menu: str = """
++-------------+-------------------+
+| Action      | Command           |
++-------------+-------------------+
+| Exit        | exit              |
+|             | quit              |
++-------------+-------------------+
+| Help        | help              |
++-------------+-------------------+
+| Move        | move <direction>  |
+|             | go <direction>    |
++-------------+-------------------+
+| Look        | look              |
++-------------+-------------------+
+| Inventory   | inventory         |
+|             | inv               |
++-------------+-------------------+
+| Take        | take              |
++-------------+-------------------+
+"""
+        print(help_menu)
+    elif verb in ("go", "move"):
+        if len(parts) < 2:
+            print("Go where?\n")
+        else:
+            player.move(world, parts[1])
+    elif verb == "look":
+        player.look(world)
+    elif verb == "take":
+        if len(parts) < 2:
+            print("Take what?\n")
+        else:
+            # player.take(parts[1])
+            pass
+    elif verb in ("inventory", "inv"):
+        player.show_inventory()
+    else:
+        print("I don't understand that command.\n")
+    
 def main():
+    # Creating world
     world: World = World()
     world.create_world()
-    print(f"Please enter your player name...")
-    cmd = input("Player Name > ")
-    tmp_player = [cmd]
-    print(f"Please choose your Race...")
-    tmp_race = [member.value for member in PlayerRace]
-    for i in range(len(tmp_race)):
-        print(f"{i + 1}: {tmp_race[i]}")
-    right_option = False
-    while not right_option:
-        cmd = input("Race > ")
-        right_option = True
-        match (cmd):
-            case "1":
-                tmp_player.append(PlayerRace.LALAFELL)
-                break
-            case "2":
-                tmp_player.append(PlayerRace.HYUR)
-                break
-            case "3":
-                tmp_player.append(PlayerRace.AURA)
-                break
-            case "4":
-                tmp_player.append(PlayerRace.ELEZEN)
-                break
-            case "5":
-                tmp_player.append(PlayerRace.MIQOTE)
-                break
-            case "6":
-                tmp_player.append(PlayerRace.HROTHGAR)
-                break
-            case "7":
-                tmp_player.append(PlayerRace.VIERA)
-                break
-            case _:
-                print("Invalid Option. Try Again...")
-                right_option = False
 
-    print(f"Please choose your starting location...")
-    print(f"1. Ul'dah\n2. Gridania\n3. Limsa Lominsa")
-    right_option = False
-    while not right_option:
-        cmd = input("Starting Location > ")
-        right_option = True
-        match (cmd):
-            case "1":
-                tmp_player.append("Ul'dah")
-                break
-            case "2":
-                tmp_player.append("Gridania")
-                break
-            case "3":
-                tmp_player.append("Limsa Lominsa")
-                break
-            case _:
-                print("Invalid Option. Try Again...")
-                right_option = False
+    # Creating player
+    player = create_player()
 
-    player = Player(tmp_player[0], tmp_player[1], tmp_player[2])
+    # Intro
     print(f"\n=== Welcome to Eorzea {player.get_name()}! ===\n")
+    print("Notice: Type 'exit' to end game.")
+    print("Notice: Type 'help' for help info.")
     player.look(world)
 
+    # Start Game Loop
+    while True:
+        cmd = input("> ")
+        parse_command(world, player, cmd)
 
 
 

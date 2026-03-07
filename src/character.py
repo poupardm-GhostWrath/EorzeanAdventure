@@ -103,11 +103,11 @@ class Player(Character):
         return 1 + self.level_up()
         
     def move(self, world: World, direction: str) -> None:
-        curr_location: Location = world.locations[self._location]
-        if direction in curr_location["exits"]:
-            loc = world.locations[curr_location["exits"][direction]]
-            self._location = loc.name
-            print(f"You head {direction}.\n")
+        curr_location: Location = world.get_locations()[self._location]
+        if direction in curr_location.get_exits():
+            loc = world.get_locations()[curr_location.get_exits()[direction]]
+            self._location = loc.get_name()
+            print(f"You head towards {self._location}.\n")
         else:
             print("You can't go that way.\n")
 
@@ -116,7 +116,9 @@ class Player(Character):
         print(curr_location.get_description())
         if len(curr_location.get_items()) > 0:
             print("You see:", "\n- ".join(curr_location.get_items()))
-        print("Exits:", "\n-","\n- ".join(curr_location.get_exits().keys()))
+        print("Exits:")
+        for exit in curr_location.get_exits():
+            print(f"- {exit}: {curr_location.get_exits()[exit]}")
 
     def add_to_inventory(self, item: Item) -> None:
         for i in self._inventory:
@@ -175,6 +177,66 @@ class Player(Character):
             return True
         else:
             return False
+
+def create_player() -> Player:
+    print("=== Player Creation ===\n")
+    print(f"Please enter your player name...")
+    cmd = input("Player Name > ")
+    tmp_player = [cmd]
+    print(f"Please choose your Race...")
+    tmp_race = [member.value for member in PlayerRace]
+    for i in range(len(tmp_race)):
+        print(f"{i + 1}: {tmp_race[i]}")
+    right_option = False
+    while not right_option:
+        cmd = input("Race > ")
+        right_option = True
+        match (cmd):
+            case "1":
+                tmp_player.append(PlayerRace.LALAFELL)
+                break
+            case "2":
+                tmp_player.append(PlayerRace.HYUR)
+                break
+            case "3":
+                tmp_player.append(PlayerRace.AURA)
+                break
+            case "4":
+                tmp_player.append(PlayerRace.ELEZEN)
+                break
+            case "5":
+                tmp_player.append(PlayerRace.MIQOTE)
+                break
+            case "6":
+                tmp_player.append(PlayerRace.HROTHGAR)
+                break
+            case "7":
+                tmp_player.append(PlayerRace.VIERA)
+                break
+            case _:
+                print("Invalid Option. Try Again...")
+                right_option = False
+
+    print(f"Please choose your starting location...")
+    print(f"1. Ul'dah\n2. Gridania\n3. Limsa Lominsa")
+    right_option = False
+    while not right_option:
+        cmd = input("Starting Location > ")
+        right_option = True
+        match (cmd):
+            case "1":
+                tmp_player.append("Ul'dah")
+                break
+            case "2":
+                tmp_player.append("Gridania")
+                break
+            case "3":
+                tmp_player.append("Limsa Lominsa")
+                break
+            case _:
+                print("Invalid Option. Try Again...")
+                right_option = False
+    return Player(tmp_player[0], tmp_player[1], tmp_player[2])
 
 
 class Enemy(Character):

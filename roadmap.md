@@ -5,7 +5,7 @@
 4. ~~Build location~~
 5. ~~Build world~~
 6. Populate world
-    - ~~Locations~~
+    - Locations
     - Items
     - Enemies
 7. Add player movements

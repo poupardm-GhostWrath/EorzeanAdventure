@@ -3,9 +3,9 @@
         "desc": "You are in the bustling City of Ul'dah. You see an Aetheryte Crystal in front of you.\nIn the distance, you see someone getting mugged while another just dances there. You try to ignore it...",
         "exits": {
             "north": "Thanalan", 
-            "west": "Market", 
+            "west": "The Sapphire Avenue Exchange", 
             "east": "The Flames", 
-            "south": "Adventure's Guild"},
+            "south": "The Quicksand"},
         "items": ["staff"],
         "crystal": true,
         "enemies": []
@@ -13,10 +13,10 @@
     "Gridania": {
         "desc": "You are in the Forest Town of Gridania. You see an Aetheryte Crystal in front of you.\nIn the distance, you see some Miqo'te band performing. You don't recognize any of these strange songs...",
         "exits": {
-            "north": "Market",
+            "north": "Shaded Bower",
             "west": "The Black Shroud",
             "east": "The Serpent",
-            "south": "Adventure's Guild" 
+            "south": "Carline Canopy" 
         },
         "items": ["bow"],
         "crystal": true,
@@ -26,8 +26,8 @@
         "desc": "You are in the Port City of Limsa Lominsa. You see an Aetheryte Crystal in front of you.\nIn the distance, you see scantily clad groups of people gather together. Wonder what they are talking about...",
         "exits": {
             "north": "The Maelstrom",
-            "west": "Market",
-            "south": "Adventure's Guild",
+            "west": "Hawkers' Alley",
+            "south": "The Drowning Wench",
             "east": "La Noscea"
         },
         "items": ["axe"],
@@ -88,6 +88,87 @@
             "east": "The Black Shroud",
             "north": "Coerthas",
             "south": "Thanalan"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    },
+    "The Quicksand": {
+        "desc": "",
+        "exits": {
+            "north": "Ul'dah"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    },
+    "Carline Canopy": {
+        "desc": "",
+        "exits": {
+            "north": "Gridania"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    },
+    "The Drowning Wench": {
+        "desc": "",
+        "exits": {
+            "north": "Limsa Lominsa"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    },
+    "The Flames": {
+        "desc": "",
+        "exits": {
+            "west": "Ul'dah"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    },
+    "The Serpent": {
+        "desc": "",
+        "exits": {
+            "west": "Gridania"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    },
+    "The Maelstrom": {
+        "desc": "",
+        "exits": {
+            "south": "Limsa Lominsa"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    },
+    "The Sapphire Avenue Exchange": {
+        "desc": "",
+        "exits": {
+            "east": "Ul'dah"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    },
+    "Shaded Bower": {
+        "desc": "",
+        "exits": {
+            "south": "Gridania"
+        },
+        "items": [],
+        "crystal": false,
+        "enemies": []
+    },
+    "Hawkers' Alley": {
+        "desc": "",
+        "exits": {
+            "east": "Limsa Lominsa"
         },
         "items": [],
         "crystal": false,
