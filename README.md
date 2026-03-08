@@ -36,5 +36,5 @@ Fish: source .venv/bin/activate.fish
 ```
 4. Run main.py
 ```
-python main.py
+python3 main.py
 ```

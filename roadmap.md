@@ -1,24 +1,28 @@
 # Road Map
+
+### For Boot.dev course
 1. ~~Build player~~
 2. ~~Build enemy~~
 3. ~~Build item~~
 4. ~~Build location~~
 5. ~~Build world~~
-6. Populate world
+6. ~~Make player capable of moving~~
+
+### Future Updates
+7. Populate world
     - Locations
     - Items
     - Enemies
-7. Add player movements
-    - ~~Move~~
+8. Add player movements
     - Pick up items
     - Drop items
-8. Add combat
+9. Add combat
     - Death
     - Loot
-9. Make data persistent (SQLite)
-10. Make game playable on browser
+10. Make data persistent (SQLite)
+11. Make game playable on browser
     - Docker?
     - Direct to website?
-11. Make users create login to save player info
-12. Quests
-13. Who knows
+12. Make users create login to save player info
+13. Quests
+14. Who knows
