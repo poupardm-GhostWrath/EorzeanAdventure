@@ -29,12 +29,16 @@ git clone https://github.com/poupardm-GhostWrath/EorzeanAdventure
 ```
 cd EorzeanAdventure
 ```
-3. Activate Virtual Environment
+3. Create Virtual Environment
+```
+uv venv
+```
+4. Activate Virtual Environment
 ```
 Bash: source .venv/bin/activate
 Fish: source .venv/bin/activate.fish
 ```
-4. Run main.py
+5. Run main.py
 ```
 python3 main.py
 ```
